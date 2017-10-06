@@ -29,9 +29,8 @@ class LibrarianBot < SlackRubyBot::Bot
 
   class << self
     def latest_release
-
       # Provide authentication credentials
-      client = Octokit::Client.new(:access_token => "f876719598fbe3fae0b4c72719fe338830ae7319")
+      client = Octokit::Client.new(:access_token => "1d430e5b9ab673831504449629514ae7732bdec3")
 
       response = client.latest_release('nycdot/sims')
       data = Hash.new
@@ -42,11 +41,12 @@ class LibrarianBot < SlackRubyBot::Bot
     end
 
     def gist(environment = 'prod')
-      client = Octokit::Client.new(:access_token => "f876719598fbe3fae0b4c72719fe338830ae7319")
+      # Provide authentication credentials
+      client = Octokit::Client.new(:access_token => "1d430e5b9ab673831504449629514ae7732bdec3")
+      version = ''
 
       response = client.gist('64630625db05d7a80381e4b8cf3b019f')
       versions = response['files']['sims-versions.md']['content'].split(',')
-      version = 'a'
       versions.each do |item|
         env, ver = item.split('=')
         if env.upcase == environment
