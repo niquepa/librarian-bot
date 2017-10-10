@@ -8,7 +8,6 @@ module LibrarianBot
         @repoName = ENV['GITHUB_REPO'].freeze
         @gistName = ENV['GIST_NAME'].freeze
         @gistId   = ENV['GIST_ID'].freeze
-        #@client = Octokit::Client.new(:access_token => "cf8b1cf9e0beea1b7cd95080300fa55791b097af")
       end
 
       def authenticated?
