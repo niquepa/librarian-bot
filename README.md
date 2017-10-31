@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    $ env SLACK_API_TOKEN=YOUR_SLACK_TOKEN bundle exec ruby librarianbot.rb
 
 ## Development
 
